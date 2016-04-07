@@ -26,11 +26,11 @@ public class MyConnection{
     int port;
 
     MyConnection(String db,
-            String host, 
-            int port, 
-            String dbname,
-            String dbUser,
-            String dbPwd) {
+                   String host, 
+                   int port, 
+                   String dbname,
+                   String dbUser,
+                   String dbPwd) {
         this.db =db;
         this.host = host;
         this.dbname = dbname;
@@ -39,9 +39,8 @@ public class MyConnection{
         this.dbPwd = dbPwd;
     }
 
-    Connection getConn() throws SQLException{
-        String connectionUrl = String.format("jdbc:%s://%s:%d/%s",
-                db, host, port, dbname); 
+        Connection getConn() throws SQLException {
+        String connectionUrl = String.format("jdbc:%s://%s:%d/%s", db, host, port, dbname); 
         Connection conn = DriverManager.getConnection(connectionUrl,dbUser,dbPwd);
         return conn;
     }

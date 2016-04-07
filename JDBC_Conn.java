@@ -7,6 +7,12 @@ import java.sql.Timestamp;
 
 public class JDBC_Conn 
 {
+    MyConnection connector;
+    
+    public JDBC_Conn(){
+    connector = new MyConnection("mysql","localhost",3306,"student_info","root","sharma");    
+    }
+
     void insertStudent(String roll_num, 
                          String first_name, 
                          String last_name, 
@@ -14,12 +20,7 @@ public class JDBC_Conn
                          String phone,
                          String email){
           
-         /* String connectionUrl = "jdbc:mysql://localhost:3306/student_info";
-          String dbUser = "root";
-          String dbPwd = "sharma";
-          Connection conn;
-          */
-          ResultSet rs;
+         ResultSet rs;
           
          String queryString = "insert into students values("+"'"+roll_num+"'"+", '"+first_name+"' , '"+last_name+"' , '"+branch+"' , '"+phone+"' , '"+email+"' , CURRENT_TIMESTAMP());";
         
@@ -27,9 +28,6 @@ public class JDBC_Conn
  
         try
         {
-            //conn = DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
-            MyConnection connector = new MyConnection("mysql","localhost",3306,"student_info","root","sharma");
-
             Connection conn = connector.getConn();
             Statement stmt = conn.createStatement();
        
@@ -52,20 +50,15 @@ public class JDBC_Conn
                         String branch,
                         String subject){
           
-          String connectionUrl = "jdbc:mysql://localhost:3306/student_info";
-          String dbUser = "root";
-          String dbPwd = "sharma";
-          Connection conn;
-          ResultSet rs;
+         ResultSet rs;
           
          String queryString = "insert into teacher values(1,"+"'"+uname+"'"+", '"+pass+"' , '"+teacher_name+"' , '"+branch+"' , '"+subject+"');";
         
-         System.out.println(queryString);
+         //System.out.println(queryString);
  
         try
         {
-            conn = DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
-           
+            Connection conn = connector.getConn();
             Statement stmt = conn.createStatement();
        
             stmt.executeUpdate(queryString);
