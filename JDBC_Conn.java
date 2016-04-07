@@ -13,7 +13,8 @@ public class JDBC_Conn
     connector = new MyConnection("mysql","localhost",3306,"student_info","root","sharma");    
     }
 
-    void insertStudent(String roll_num, 
+    void insertStudent(String roll_num,
+                         String pass, 
                          String first_name, 
                          String last_name, 
                          String branch,
@@ -22,9 +23,9 @@ public class JDBC_Conn
           
          ResultSet rs;
           
-         String queryString = "insert into students values("+"'"+roll_num+"'"+", '"+first_name+"' , '"+last_name+"' , '"+branch+"' , '"+phone+"' , '"+email+"' , CURRENT_TIMESTAMP());";
+         String queryString = "insert into student values("+"'"+roll_num+"'"+", '"+pass+"' , '"+first_name+"' , '"+last_name+"' , '"+branch+"' , '"+phone+"' , '"+email+"' , CURRENT_TIMESTAMP());";
         
-        // System.out.println(queryString);
+         System.out.println(queryString);
  
         try
         {
@@ -52,9 +53,9 @@ public class JDBC_Conn
           
          ResultSet rs;
           
-         String queryString = "insert into teacher values(1,"+"'"+uname+"'"+", '"+pass+"' , '"+teacher_name+"' , '"+branch+"' , '"+subject+"');";
+         String queryString = "insert into teacher (uname, pass, teacher_name, branch, subject) values   ("+"'"+uname+"'"+", '"+pass+"' , '"+teacher_name+"' , '"+branch+"' , '"+subject+"');";
         
-         //System.out.println(queryString);
+         System.out.println(queryString);
  
         try
         {
@@ -78,7 +79,7 @@ public class JDBC_Conn
     public static void main(String[] args) 
     {
         JDBC_Conn j = new JDBC_Conn();
-        j.insertStudent("186","kinshuk","sarabhai","cse","9989898020","kinshuksarabhai@gmail.com");
+        j.insertStudent("186","meetu","kinshuk","sarabhai","cse","9989898020","kinshuksarabhai@gmail.com");
         j.insertTeacher("mohit","pass","mohit narang","ece","Digital Electronics");
     }
 
