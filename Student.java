@@ -1,57 +1,68 @@
 class Student{
 
-String name;
-String branch;
 String roll_num;
-String phone_num;
+String pass;
+String first_name;
+String last_name;
+String branch;
+String phone;
 String email;
 
-public Student(String name, String roll_num, String branch, String phone_num, String email){
-	this.name = name;
+public Student(String roll_num, String first_name, String last_name, String branch, String phone, String email){
+	this.first_name = first_name;
+        this.last_name = last_name;
 	this.roll_num = roll_num;
 	this.branch = branch;
-	this.phone_num = phone_num;
+	this.phone = phone;
 	this.email = email;
 	}
 
-	void setName(String name){
-	this.name  = name;
+	void setfirst_name(String first_name){
+	this.first_name  = first_name;
 	}
 	
-	String getName(){
-	return name;
+	String getfirst_name(){
+	return first_name;
 	}
 
-	void setRoll_num(String roll_num){
+	void setlast_name(String last_name){
+	this.last_name  = last_name;
+	}
+	
+	String getlast_name(){
+	return last_name;
+	}
+
+	void setroll_num(String roll_num){
 	this.roll_num  = roll_num;
 	}
 	
-	String getRoll_num(){
+	String getroll_num(){
 	return roll_num;
 	}
 
-	void setBranch(String branch){
+	void setbranch(String branch){
 	this.branch  = branch;
 	}
 	
-	String getBranch(){
+	String getbranch(){
 	return branch;
 	}
 
-	void setPhone_num(String phone_num){
-	this.phone_num  = phone_num;
+	void setphone(String phone){
+	this.phone = phone;
 	}
 	
-	String getPhone_num(){
-	return phone_num;
+	String getphone(){
+	return phone;
 	}
 
-	void setEmail(String email){
+	void setemail(String email){
 	this.email  = email;
 	}
 	
-	String getEmail(){
+	String getemail(){
 	return email;
 	}
 
-	
+}

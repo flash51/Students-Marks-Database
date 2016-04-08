@@ -4,18 +4,18 @@ class Teacher {
 	String pass;
 	String teacher_name;
 	String branch;
-	String subject;
+	String subject_name;
 
 	public Teacher(String uname, 
 			String pass, 
 			String teacher_name,
 			String branch, 
-			String subject) {
+			String subject_name) {
 		this.uname = uname;
 		this.pass = pass;
 		this.teacher_name = teacher_name;
 		this.branch = branch;
-		this.subject = subject;
+		this.subject_name = subject_name;
 	} 
 
 	void setuname(String uname){
@@ -50,14 +50,13 @@ class Teacher {
 	return branch;
 	}
 
-	void setsubject(String subject){
-	this.subject  =  subject;
+	void setsubject_name(String subject_name){
+	this.subject_name  =  subject_name;
 	}
 	
-	String getsubject(){
-	return subject;
+	String getsubject_name(){
+	return subject_name;
 	}
-
-		
+	
 }
 
