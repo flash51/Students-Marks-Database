@@ -1,11 +1,11 @@
-class Branch {
+class Course {
 
 	String subject_name;
 	String subject_code;
 	String theory;
 	String practical;
 
-	public Branch(String subject_name, 
+	public Course(String subject_name, 
 		        String subject_code, 
 		        String theory,
 			String practical) {
