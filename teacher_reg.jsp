@@ -11,7 +11,7 @@
         <table border="1" width="35%" cellpadding="5">
             <thead>
                 <tr>
-                    <th colspan="2">ENTER INFORMATION HERE</th>
+                    <th colspan="2">TEACHER REGISTRATION</th>
                 </tr>
             </thead>
             <tbody>
