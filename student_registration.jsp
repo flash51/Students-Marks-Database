@@ -1,4 +1,4 @@
-<% page import="java.sql.*"%>
+<%@ page import="java.sql.*"%>
 <%
     String roll_num = request.getParameter("roll_num");
     String pass = request.getParameter("pass");
@@ -8,12 +8,12 @@
     String phone_num = request.getParameter("phone_num");
     String email = request.getParameter("email"); 
 
-    PreparedStatement ps = null;
-    Connection conn = null;
-
     Class.forName("com.mysql.jdbc.Driver");
-    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_info","root","sharma");
-    String query ="insert into student(roll_num, pass, first_name, last_name, branch, phone_num, email) values (?,?,?,?,?,?,?)";
+    
+    Connection  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_info","root","sharma");
+
+    PreparedStatement ps = conn.prepareStatement("insert into student(roll_num, pass, first_name, last_name, branch, phone_num, email) values (?,?,?,?,?,?,?)");
+    
     ps.setString(1,roll_num);
     ps.setString(2,pass);
     ps.setString(3,first_name);
