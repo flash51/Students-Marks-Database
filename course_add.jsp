@@ -25,11 +25,11 @@
             </tr>
             <tr>
                 <td>Theory Fixed Marks</td>
-                <td> <input type="number" name="theory"> </td>
+                <td> <input type="number" name="theory" min="0" max="100" step="5" value="0"> </td>
             </tr>
             <tr>
                 <td> Practical Fixed Marks </td>
-                <td> <input type="number" name="practical"> </td>
+                <td> <input type="number" name="practical" min="0" max="100" step="5" value="0" </td>
             </tr>
             <tr>
                 <td> <input type="submit" value="Submit" /> </td>
