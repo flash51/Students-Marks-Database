@@ -1,21 +1,22 @@
 class Teacher {
 
+	String subject_code;
 	String uname;
 	String pass;
 	String teacher_name;
 	String branch;
-	String subject_name;
 
-	public Teacher(String uname, 
+
+	public Teacher(	String subject_code;
+                        String uname, 
 			String pass, 
 			String teacher_name,
-			String branch, 
-			String subject_name) {
+			String branch) { 
 		this.uname = uname;
 		this.pass = pass;
 		this.teacher_name = teacher_name;
 		this.branch = branch;
-		this.subject_name = subject_name;
+		this.subject_code = subject_code;
 	} 
 
 	void setuname(String uname){
@@ -50,12 +51,12 @@ class Teacher {
 	return branch;
 	}
 
-	void setsubject_name(String subject_name){
-	this.subject_name  =  subject_name;
+	void setsubject_code(String subject_code){
+	this.subject_code  =  subject_code;
 	}
 	
-	String getsubject_name(){
-	return subject_name;
+	String getsubject_code(){
+	return subject_code;
 	}
 	
 }

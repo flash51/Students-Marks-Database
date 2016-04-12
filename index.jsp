@@ -34,7 +34,7 @@
        </table>
        </left>
    </form>
-   <form> 
+   <form method="POST" action="teacher_login.jsp"> 
    <center>
         <table border="1" width="30%" cellpadding="3">
             <thead>

@@ -11,8 +11,9 @@
    ResultSet rs = ps.executeQuery();
 
    if(rs.next()){
-   //session.setAttribute("roll_num",roll_num);
-   out.println("Welcome " +roll_num);
+   session.setAttribute("roll_num",roll_num);
+  // out.println("Welcome " +roll_num);
+   response.sendRedirect("success_student.jsp"); 
    }
    else{
    out.println("Invalid Password <a href='index.jsp'>Try Again</a>");

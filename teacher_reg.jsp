@@ -16,24 +16,24 @@
             </thead>
             <tbody>
             <tr>
-                <td>Teacher User Name</td>
+                <td>TEACHER USER NAME</td>
                 <td> <input type="text" name="uname" value="" /> </td>
             </tr>
             <tr>
-                <td>Password</td>
+                <td>PASSWORD</td>
                 <td> <input type="password" name="pass" value="" /> </td>
             </tr>
             <tr>
-                <td>Teacher Name</td>
+                <td>TEACHER NAME</td>
                 <td> <input type="text" name="teacher_name" value="" /> </td>
             </tr>
             <tr>
-                <td>Branch</td>
+                <td>BRANCH</td>
                 <td> <input type="text" name="branch" value="" /> </td>
             </tr>
             <tr>
-                <td>Subject Name</td>
-                <td> <input type="text" name="subject_name" value="" /> </td>
+                <td>SUBJECT CODE</td>
+                <td> <input type="text" name="subject_code" value="" /> </td>
             </tr>
             <tr>
                 <td> <input type="submit" value="Register" /> </td>

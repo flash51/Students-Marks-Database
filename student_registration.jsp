@@ -25,11 +25,11 @@
     ps.close();
 
     if(i > 0){
-    //response.sendRedirect("welcome.jsp");
-    out.println("Registration of Student Succesfull!!");
+    response.sendRedirect("welcome.jsp");
+    //out.println("Registration of Student Succesfull!!");
     }
     else{
-   //response.sendRedirect("??.jsp");
+    response.sendRedirect("index.jsp");
     }
  
  %>
