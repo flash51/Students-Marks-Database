@@ -3,21 +3,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
-<title>STUDENT REGISTRATION</title>
+<title>USER REGISTRATION</title>
 </head>
 <body>
-<form method="post" action="student_registration.jsp">
+<form method="post" action="user_registration.jsp">
     <center>
         <table border="1" width="35%" cellpadding="5"> 
             <thead>
                 <tr>
-                    <th colspan="2">STUDENT REGISTRATION</th>
+                    <th colspan="2">USER REGISTRATION</th>
                 </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Student Roll Number</td>
-                <td> <input type="text" name="roll_num" value="" /> </td>
+                <td>User Id</td>
+                <td> <input type="text" name="user_id" value="" /> </td>
             </tr>
             <tr>
                 <td>Password</td>
@@ -30,9 +30,13 @@
             <tr>
                 <td>Last Name</td>
                 <td> <input type="text" name="last_name" value="" /> </td>
-            </tr> 
+            </tr>
             <tr>
-                <td>Branch</td>
+                <td>Role </td>
+                <td> <input type="text" name="role" value="" /> </td>
+           </tr>
+           <tr>
+               <td>Branch</td>
                 <td> <input type="text" name="branch" value="" /> </td>
             </tr> 
             <tr>
