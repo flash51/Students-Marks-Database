@@ -14,7 +14,7 @@
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_info","root","sharma");
 
         Statement st = conn.createStatement();
-        String query ="select user.user_id, user.first_name, user.last_name, user.branch,marks.subject_code,subject.subject_name, marks.marks_theory, marks.marks_practical from user LEFT JOIN marks ON (user.user_id = marks.user_id) INNER JOIN subject ON (marks.subject_code = subject.subject_code) WHERE user.role='student' "; 
+        String query ="select user.user_id, user.first_name, user.last_name, user.branch,marks.subject_code, marks.marks_theory, marks.marks_practical from user LEFT JOIN marks ON user.user_id = marks.user_id WHERE user.role='student' "; 
         //PreparedStatement stmt = null ;
         ResultSet rs = st.executeQuery(query);
  %>
