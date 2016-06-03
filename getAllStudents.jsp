@@ -27,7 +27,7 @@
               marks_practical = Integer.parseInt(request.getParameter("marks_practical"));
         }
               // out.print("<tr><td>"+user_id+"</td> \n");
-       // out.print("<td>"+marks_theory+"</td> \n");
+        //out.print("<td>"+marks_theory+"</td> \n");
        // out.print("<td>"+marks_practical+"</td></tr> \n");
    
      Enumeration names = request.getParameterNames();
