@@ -71,7 +71,7 @@
           <th>ROLL NUMBER</th> <th>FIRST NAME</th> <th>LAST NAME </th> <th>BRANCH</th> <th>SUBJECT CODE</th>  <th>THEORY MARKS</th> <th>PRACTICAL MARKS</th>
         </tr>
         <%   Statement st = conn.createStatement();
-        String query ="select user.user_id, user.first_name, user.last_name, user.branch,marks.subject_code, marks.marks_theory, marks.marks_practical from user LEFT JOIN marks ON user.user_id = marks.user_id WHERE user.role='student' "; 
+        String query ="select user.user_id, user.first_name, user.last_name, user.branch,marks.subject_code, marks.marks_theory, marks.marks_practical from user LEFT JOIN marks ON user.user_id = marks.user_id WHERE user.role='student' and marks.subject_code='"+subject_code+"'"; 
       
         ResultSet rs = st.executeQuery(query);
         %>  
@@ -95,7 +95,7 @@
       else { %>
    <td> <%=rs.getString("marks_theory") %> </td>
    <td> <%=rs.getString("marks_practical") %> </td>
-   <td> <input type="submit" value="Delete"  /></td>
+   <td> <input type="submit" value="Update"  /></td>
 
 <% } %>
 </tr>
