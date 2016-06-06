@@ -39,12 +39,10 @@
  <%
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_info","root","sharma");
-
-      
+  
             PreparedStatement ps = conn.prepareStatement("UPDATE marks set marks_theory=?, marks_practical=? WHERE user_id=? and subject_code=? ");
          if(request.getParameter("update") != null){
-        out.print("Inside update check");
-        ps.setNull(1,java.sql.Types.VARCHAR);
+        ps.setNull(1,java.sql.Types.INTEGER);
         ps.setNull(2,java.sql.Types.INTEGER);
         ps.setString(3,user_id);
         ps.setString(4,subject_code);
