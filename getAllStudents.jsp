@@ -3,21 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ALL STUDENTS</title>
+<title>ALL BRANCH STUDENTS</title>
 </head>
 <body>
 <center>
-    <h2>Request Parameter</h2>
+   <%/* <h2>Request Parameter</h2>
     <table width="50%" border="2" align="center">
 <tr bgcolor="#00ffbf">
 <th>Header Name</th><th>Header Value(s)</th>
-</tr>
+</tr> */ %>
                                       
 <%
         String branch = request.getParameter("branch");
         String subject_code = request.getParameter("subject_code");
-       // out.print("<tr><td>"+branch+"</td> \n");
-         //   out.print("<td>"+subject_code+"</td></tr> \n");
         String user_id = request.getParameter("user_id");
         int marks_theory = 0;
         int marks_practical = 0;
@@ -26,17 +24,14 @@
               marks_theory =Integer.parseInt(request.getParameter("marks_theory"));
               marks_practical = Integer.parseInt(request.getParameter("marks_practical"));
         }
-              // out.print("<tr><td>"+user_id+"</td> \n");
-        //out.print("<td>"+marks_theory+"</td> \n");
-       // out.print("<td>"+marks_practical+"</td></tr> \n");
-   
-     Enumeration names = request.getParameterNames();
+//To see all the parameters
+    /* Enumeration names = request.getParameterNames();
             while(names.hasMoreElements()){
               String paramName = (String) names.nextElement();
               out.print("<tr><td>"+paramName+"</td>\n");
               String paramValue = request.getParameter(paramName);
               out.print("<td>"+paramValue+"</td>\n");
-                                }
+           }*/
   %>
   </table>
 
@@ -46,25 +41,26 @@
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_info","root","sharma");
 
       
-        PreparedStatement ps = conn.prepareStatement("UPDATE marks set user_id=?, subject_code=?, marks_theory=?, marks_practical=? WHERE user_id=? ");
-        if(user_id != null){
-        ps.setString(1,user_id);
-        ps.setString(2,subject_code);
-        ps.setInt(3,marks_theory);
-        ps.setInt(4,marks_practical);
-        ps.setString(5,user_id);
-       int i = ps.executeUpdate();
-       if(i==0){
-       PreparedStatement ps1 = conn.prepareStatement("INSERT into marks(user_id,subject_code,marks_theory,marks_practical) values(?,?,?,?)");
-       ps1.setString(1,user_id);
-       ps1.setString(2,subject_code);
-       ps1.setInt(3,marks_theory);
-       ps1.setInt(4,marks_practical);
-       ps1.executeUpdate();
-       ps1.close();
-       }
-        ps.close();
+            PreparedStatement ps = conn.prepareStatement("UPDATE marks set marks_theory=?, marks_practical=? WHERE user_id=? and subject_code=? ");
+         if(request.getParameter("update") != null){
+        out.print("Inside update check");
+        ps.setNull(1,java.sql.Types.VARCHAR);
+        ps.setNull(2,java.sql.Types.INTEGER);
+        ps.setString(3,user_id);
+        ps.setString(4,subject_code);
+        ps.executeUpdate();
         }
+     
+        else {
+        ps.setInt(1,marks_theory);
+        ps.setInt(2,marks_practical);
+        ps.setString(3,user_id);
+        ps.setString(4,subject_code);
+
+       int i = ps.executeUpdate();
+       // if(i==0){}
+        ps.close();
+       }
         %>
  <table width="70%" border="2" align="center">
        <tr bgcolor="#00ffbf">
@@ -93,9 +89,14 @@
   </form>
 <% } 
       else { %>
+      <form method="post" action="getAllStudents.jsp" >
    <td> <%=rs.getString("marks_theory") %> </td>
    <td> <%=rs.getString("marks_practical") %> </td>
+        <input type="hidden" name="user_id" value="<%=rs.getString("user_id") %>" /> 
+        <input type="hidden" name="subject_code" value="<%= subject_code %>" /> 
+   <input type="hidden" name="update" value="update" /> </td>
    <td> <input type="submit" value="Update"  /></td>
+   </form>
 
 <% } %>
 </tr>
@@ -103,6 +104,7 @@
        </table>
        </center>
         </body>
+<a href='logout.jsp'>Logout</a>
         </html> 
 
 
